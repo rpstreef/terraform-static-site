@@ -1,0 +1,5 @@
+.infracost*/*
+.terraform*
+.terraform/*
+environments/production/.terraform*
+terraform.*
