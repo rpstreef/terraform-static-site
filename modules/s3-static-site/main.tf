@@ -37,7 +37,8 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
           Service : "cloudfront.amazonaws.com"
         },
         Action = [
-          "s3:GetObject"
+          "s3:GetObject",
+          "s3:ListBucket"
         ]
         Resource = [
           "${aws_s3_bucket.my_bucket.arn}",
