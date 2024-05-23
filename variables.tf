@@ -43,6 +43,17 @@ variable "provided_certificate_arn" {
   default     = null
 }
 
+variable custom_error_responses {
+  description = "A list of maps for custom error responses, e.g. 404 redirects to /404.html with response 200"
+  type = list(object({
+      error_code = number
+      error_caching_min_ttl = number
+      response_code = number
+      response_page_path = string
+  }))
+  default = []
+}
+
 variable "additional_origins" {
   description = "A list of maps for additional origins, in the format [{domain_name = \"example.com\", origin_id = \"example_origin_id\", path_pattern = \"/example_path/*\"}, ...]"
   type = list(object({

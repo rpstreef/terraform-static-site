@@ -31,6 +31,7 @@ module "s3_static_site" {
   product_name    = var.product_name
   certificate_arn = var.is_top_level_domain ? module.acm_certificate[0].certificate_arn : var.provided_certificate_arn
 
+  custom_error_responses = var.custom_error_responses
   additional_origins     = var.additional_origins
   additional_sub_domains = var.additional_sub_domains
 

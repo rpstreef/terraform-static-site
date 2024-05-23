@@ -164,6 +164,16 @@ resource "aws_cloudfront_distribution" "_" {
   http_version        = "http2and3"
   default_root_object = "index.html"
 
+dynamic "custom_error_response" {
+    for_each = var.custom_error_responses
+    content {
+      error_code = origin.value.error_code
+      error_caching_min_ttl = origin.value.error_caching_min_ttl
+      response_code = origin.value.response_code
+      response_page_path = origin.value.response_page_path
+    }
+}
+
   # Default cache behavior
   default_cache_behavior {
     allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
