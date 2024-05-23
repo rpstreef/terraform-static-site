@@ -7,3 +7,7 @@ output "certificate_arn" {
   description = "The ARN of the certificate"
   value       = var.is_top_level_domain ? module.acm_certificate[0].certificate_arn : var.provided_certificate_arn
 }
+
+output "cloudfront_distribution_id" {
+  value = module.s3_static_site.cloudfront_distribution_id
+}
