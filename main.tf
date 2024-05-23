@@ -8,6 +8,7 @@ module "acm_certificate" {
 
   tags = var.tags
 }
+
 module "dnssec" {
   count = var.is_top_level_domain ? 1 : 0
 

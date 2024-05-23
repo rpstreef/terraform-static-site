@@ -125,7 +125,7 @@ resource "aws_lambda_function" "redirect" {
   function_name    = "${var.product_name}-redirect-to-index"
   handler          = "index.handler"
   role             = aws_iam_role.lambda_execution_role.arn
-  runtime          = "nodejs14.x"
+  runtime          = "nodejs20.x"
   filename         = "${path.module}/redirect.zip"
   source_code_hash = filebase64sha256("${path.module}/redirect.zip")
   publish          = true
