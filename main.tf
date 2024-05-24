@@ -21,6 +21,13 @@ module "dnssec" {
   tags = var.tags
 }
 
+module "iam" {
+  source = "./modules/iam"
+
+  bucket_name     = var.bucket_name
+  tags = var.tags
+}
+
 module "s3_static_site" {
   source = "./modules/s3-static-site"
 
