@@ -26,7 +26,8 @@ resource "aws_iam_policy" "s3_and_cloudfront_policy" {
         "s3:ListBucket",
         "s3:GetObject",
         "s3:GetObjectVersion",
-        "s3:GetBucketLocation"
+        "s3:GetBucketLocation",
+        "s3:ListObjectsV2"
       ],
       "Resource": [
         "arn:aws:s3:::${var.bucket_name}/*",
