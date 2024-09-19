@@ -1,6 +1,6 @@
 
 resource "aws_iam_user" "spacelift_user" {
-  name = "spacelift-user"
+  name = "${var.bucket_name}-spacelift-user"
 
   tags = var.tags
 }
