@@ -6,7 +6,7 @@ resource "aws_iam_user" "spacelift_user" {
 }
 
 resource "aws_iam_policy" "s3_and_cloudfront_policy" {
-  name        = "S3AndCloudFrontPolicy"
+  name        = "${var.bucket_name}-S3AndCloudFrontPolicy"
   path        = "/"
   description = "Policy for deploying to S3 and invalidating CloudFront"
     
